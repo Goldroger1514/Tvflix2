@@ -2,6 +2,14 @@ import {fetchDataFromServer,imageBaseURL} from './api.js'
 export function search(){
   let currentPage;
   let searchWrapper=document.querySelector('.search-wrapper');
+    let searchBtn=document.querySelector('.search-btn');
+  let closeBtn=document.querySelector('.close-btn');
+  let searchBox=document.querySelector('.search-box');
+  [searchBtn,closeBtn].forEach(btn=>{
+    btn.onclick=function(){
+      searchBox.classList.toggle('active');
+    }
+  });
   let input=document.querySelector('.search-wrapper input');
   input.addEventListener('input',function(){
     this.parentElement.classList.add('searching');
